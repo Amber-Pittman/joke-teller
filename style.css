@@ -17,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   background: url('./robot.gif');
-  background-size: contain;
+  background-size: 100%;
   background-position: left center;
   background-repeat: no-repeat;
 }
@@ -31,6 +31,7 @@ button {
   font-size: 20px;
   color: #fff;
   background-color: #ff3482;
+  background-size: cover;
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 20px 10px rgba(0,0,0,0.2);
