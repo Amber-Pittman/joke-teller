@@ -69,23 +69,24 @@ const VoiceRSS = {
         try {
             return new ActiveXObject("Microsoft.XMLHTTP")
         } catch(e) {}
-        throw"The browser does not support HTTP request"}
-    };
+        throw "The browser does not support HTTP request"
+    }
+};
 
-// function test() {
-//     VoiceRSS.speech({
-//         key: '1b7868bf2ee147198b527423a7c2b62d',
-//         src: 'Hello, world!',
-//         hl: 'en-us',
-//         v: 'Linda',
-//         r: 0, 
-//         c: 'mp3',
-//         f: '44khz_16bit_stereo',
-//         ssml: false,
-//     });
-// }
-
-// test();
+//Passing Joke to VoiceRSS API
+function tellMe(joke) {
+    console.log('tell me:', joke);
+    VoiceRSS.speech({
+        key: '1b7868bf2ee147198b527423a7c2b62d',
+        src: `${joke}`,
+        hl: 'en-us',
+        v: 'Linda',
+        r: 0, 
+        c: 'mp3',
+        f: '44khz_16bit_stereo',
+        ssml: false,
+    });
+}
 
 // Get Jokes from JokeAPI
 async function getJokes() {
@@ -99,7 +100,7 @@ async function getJokes() {
         } else {
             joke = data.joke;
         }
-        console.log(joke); 
+        tellMe(joke);
     } catch (error) {
         console.log('OOPS!', error);
     }
